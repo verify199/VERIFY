@@ -14,7 +14,7 @@ export interface SessionData {
   course_code: string;
   course_name: string;
   lecturer_name: string;
-  lecturer_rfid: string;
+  lecturer_rfid?: string;
   start_time: string;
   status: string;
   session_id?: string;
