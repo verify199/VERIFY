@@ -50,12 +50,12 @@ const Home = () => {
               course_code: data.course_code || sessionId.split("_")[0],
               course_name: data.course_name || "Course",
               lecturer_name: data.lecturer_name || "Lecturer",
-              start_time:
-                data.start_time ||
+              start_time: data.start_time ||
                 sessionId.split("_").slice(1).join("_").replace(/_/g, ""),
               status: data.status || "completed",
               session_id: sessionId,
               attendance: studentAttendance,
+              lecturer_rfid: ""
             });
           }
 
@@ -89,14 +89,13 @@ const Home = () => {
                 teacherSessions.push({
                   course_code: data.course_code || sessionCourseCode,
                   course_name: data.course_name || "CSP",
-                  lecturer_name:
-                    data.lecturer_name || user?.displayName || "Lecturer",
+                  lecturer_name: data.lecturer_name || user?.displayName || "Lecturer",
                   lecturer_rfid: data.lecturer_rfid || "",
-                  start_time:
-                    data.start_time ||
+                  start_time: data.start_time ||
                     sessionId.split("_").slice(1).join("_").replace(/_/g, ""),
                   status: data.status || "completed",
                   session_id: sessionId,
+                  attendance: undefined
                 });
               }
             });
